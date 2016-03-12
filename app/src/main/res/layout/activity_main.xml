@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="listener"
+            type="pk.databinddemo.IEventListener"/>
+
+        <variable
+            name="user"
+            type="pk.databinddemo.User"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.username}"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.password}"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{listener.onChangeText}"
+            android:text="change"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{listener.onToList}"
+            android:text="List"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{listener.onToGoods}"
+            android:text="Goods"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:layout_marginRight="0dp"
+                android:text="text"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="200dp"
+                android:layout_toRightOf="@id/text"
+                android:text="text"/>
+
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="100dp"
+                android:text="text"/>
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="20dp"
+                android:layout_height="50dp"
+                android:layout_toRightOf="@id/text"
+                android:layout_marginLeft="30dp"
+                android:background="#ff0000"
+                android:visibility="gone"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_toRightOf="@id/view"
+                android:background="#0f0000"
+                />
+
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>
