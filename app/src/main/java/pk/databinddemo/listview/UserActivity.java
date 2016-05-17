@@ -13,6 +13,7 @@ import java.util.Random;
 
 import pk.databinddemo.R;
 import pk.databinddemo.User;
+import pk.databinddemo.databinding.ActivityMainBinding;
 import pk.databinddemo.databinding.ActivityUserBinding;
 
 /**
@@ -29,6 +30,7 @@ public class UserActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityUserBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_user);
+        ActivityMainBinding as = ActivityMainBinding.inflate(getLayoutInflater());
         mListView = (ListView) findViewById(R.id.listView);
         mAdapter = new UserAdapter(this);
         mListView.setAdapter(mAdapter);
